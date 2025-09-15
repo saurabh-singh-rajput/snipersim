@@ -582,7 +582,7 @@ def edit_XML(statsobj, stats, cfg):
             elif 'network.shmem-1.bus.num-packets' in stats:
               template[i][0] = template[i][0] % int(stats['network.shmem-1.bus.num-packets'][0])  #assumption
             else:
-              template[i][0] = template[i][0] % int(stats.get('bus.num-requests', [1])[0])  #assumption
+              template[i][0] = template[i][0] % int(stats['bus.num-requests'][0])  #assumption
           elif template[i][1][0]=="NoC.duty_cycle":
             if 'network.shmem-1.mesh.link-left.total-time-used' in stats:
               DIRECTIONS = ('up', 'down', 'left', 'right')
@@ -599,7 +599,7 @@ def edit_XML(statsobj, stats, cfg):
             elif 'network.shmem-1.bus.time-used' in stats:
               template[i][0] = template[i][0] % min(1, cycles_scale[core]*float(stats['network.shmem-1.bus.time-used'][0])/max_system_cycles)
             else:
-              template[i][0] = template[i][0] % min(1, cycles_scale[core]*float(stats.get('bus.time-used', [1000])[0])/max_system_cycles)
+              template[i][0] = template[i][0] % min(1, cycles_scale[core]*float(stats['bus.time-used'][0])/max_system_cycles)
           elif template[i][1][0]=="loads":
             template[i][0] = template[i][0] % int(stats['L1-D.loads'][core])
           elif template[i][1][0]=="stores":

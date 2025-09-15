@@ -146,6 +146,7 @@ def parse_results_from_dir(resultsdir, partial = None, metrics = None):
   results = []
 
   ## sim.cfg
+  print("resultsdir: ", resultsdir)
   simcfg = os.path.join(resultsdir, 'sim.cfg')
   if not os.path.exists(simcfg):
     raise SniperResultsException("No valid configuration found")

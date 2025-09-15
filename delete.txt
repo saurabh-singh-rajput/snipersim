@@ -1,0 +1,510 @@
+    1  ℹ Cleaning previous outputs...
+    2  ℹ Running GEM5 with Skylake configuration...
+    3  ℹ This may take a few minutes...
+    4  gem5 Simulator System.  https://www.gem5.org
+    5  gem5 is copyrighted software; use the --copyright option for details.
+    6  gem5 version 23.0.0.1
+    7  gem5 compiled Aug  7 2025 14:38:01
+    8  gem5 started Aug 17 2025 18:16:56
+    9  gem5 executing on asgard, pid 730437
+   10  command line: /home/srajput/energy_simulations/gem5/build/X86/gem5.opt --outdir
+   11  command line: /home/srajput/energy_simulations/gem5/build/X86/gem5.opt --outdir=/home/srajput/energy_simulations/gem5-skylake-config/gem5-configs/m5out run-se
+   12  command line: /home/srajput/energy_simulations/gem5/build/X86/gem5.opt --outdir=/home/srajput/energy_simulations/gem5-skylake-config/gem5-configs/m5out run-se.py Tuned /home/srajput/energy_simulations/gpie/test_samples/simple_power_test
+   13  Global frequency set at 1000000000000 ticks per second
+   14  warn: No dot file generated. Please install pydot to generate the dot file and 
+   15  warn: No dot file generated. Please install pydot to generate the dot file and pdf.
+   16  src/mem/dram_interface.cc:690: warn: DRAM device capacity (32768 Mbytes) does n
+   17  src/mem/dram_interface.cc:690: warn: DRAM device capacity (32768 Mbytes) does not match the address range assigned (128 Mbytes)
+   18  src/base/statistics.hh:279: warn: One of the stats is a legacy stat. Legacy sta
+   19  src/base/statistics.hh:279: warn: One of the stats is a legacy stat. Legacy stat is a stat that does not belong to any statistics::Group. Legacy stat is depre
+   20  src/base/statistics.hh:279: warn: One of the stats is a legacy stat. Legacy stat is a stat that does not belong to any statistics::Group. Legacy stat is deprecated.
+   21  system.remote_gdb: Listening for connections on port 7000
+   22  src/mem/coherent_xbar.cc:140: warn: CoherentXBar system.subsystem.mmucache.mmub
+   23  src/mem/coherent_xbar.cc:140: warn: CoherentXBar system.subsystem.mmucache.mmubus has no snooping ports attached!
+   24  src/sim/simulate.cc:194: info: Entering event queue @ 0.  Starting simulation..
+   25  src/sim/simulate.cc:194: info: Entering event queue @ 0.  Starting simulation...
+   26  src/arch/x86/cpuid.cc:180: warn: x86 cpuid family 0x0000: unimplemented functio
+   27  src/arch/x86/cpuid.cc:180: warn: x86 cpuid family 0x0000: unimplemented function 13
+   28  src/sim/mem_state.cc:443: info: Increasing stack size by one page.
+   29  src/sim/syscall_emul.cc:74: warn: ignoring syscall mprotect(...)
+   30  Final result: 247500240000
+   31  ✓ GEM5 simulation completed
+   32  ℹ Checking outputs...
+   33  ✓ GEM5 outputs verified
+   34  ℹ Stats file size: 291041 bytes
+   35  ℹ Config file size: 136737 bytes
+   36  =============================================================================
+   37  STEP 3: Converting GEM5 Outputs to McPAT XML
+   38  =============================================================================
+   39  ℹ Running GEM5ToMcPAT.py conversion...
+   40  Reading config from: /home/srajput/energy_simulations/gem5-skylake-config/gem5-
+   41  Reading config from: /home/srajput/energy_simulations/gem5-skylake-config/gem5-configs/m5out/config.json
+   42  Reading McPAT template from: /home/srajput/energy_simulations/cMcPAT/mcpat/Proc
+   43  Reading McPAT template from: /home/srajput/energy_simulations/cMcPAT/mcpat/ProcessorDescriptionFiles/x86_Skylake_TunedCPU_template.xml
+   44  Writing input to McPAT in: ./skylake_power_analysis.xml
+   45  ✓ Conversion completed
+   46  ✓ XML file generated
+   47  ℹ File size: 7515 bytes
+   48  ℹ First 10 lines of generated XML:
+   49  <component id="root" name="root">
+   50  =============================================================================
+   51  STEP 4: Running McPAT Power Analysis
+   52  =============================================================================
+   53  ℹ Running McPAT with generated XML...
+   54  ℹ This may take a few minutes...
+   55  ✓ McPAT analysis completed
+   56  ✓ Output file generated
+   57  ℹ Output size: 133 bytes
+   58  ℹ First 10 lines of McPAT output:
+   59  McPAT (version 1.3 of Feb, 2015) is computing the target processor...
+   60  The value of homogeneous_L2s or number_of_L2s is not correct!==================
+   61  The value of homogeneous_L2s or number_of_L2s is not correct!=============================================================================
+   62  STEP 5: Calculating Energy Consumption
+   63  =============================================================================
+   64  ℹ Running energy calculation script...
+   65  Traceback (most recent call last):
+   66  clear
+   67  ./simple_gem5_mcpat_pipeline.sh 
+   68  clear
+   69  ./simple_gem5_mcpat_pipeline.sh 
+   70  ps a
+   71  ./simple_gem5_mcpat_pipeline.sh 
+   72  cd /home/srajput/energy_simulations/cMcPAT/mcpat/ProcessorDescriptionFiles
+   73  cd ..
+   74  ./mcpat -infile ProcessorDescriptionFiles/Alpha21364.xml -print_level 5
+   75  ./mcpat -infile ProcessorDescriptionFiles/Xeon.xml -print_level 5
+   76  ./mcpat -infile ProcessorDescriptionFiles/x86_AtomicSimpleCPU_template.xml.xml -print_level 5
+   77  ./mcpat -infile ProcessorDescriptionFiles/x86_AtomicSimpleCPU_template.xml -print_level 5
+   78  ./mcpat -infile ProcessorDescriptionFiles/ARM_A9.xml -print_level 5
+   79  ./mcpat
+   80  cd ..
+   81  ls
+   82  ./simple_gem5_mcpat_pipeline.sh 
+   83  ./mcpat -infile ProcessorDescriptionFiles/x86 -print_level 5
+   84  ./mcpat -infile cMcPAT/mcpat/ProcessorDescriptionFiles/x86_Skylake_TunedCPU_template.xml -print_level 5
+   85  ./mcpat
+   86  . gpie/.venv/bin/activate
+   87  ls
+   88  ./simple_gem5_mcpat_pipeline.sh 
+   89  ./mcpat -infile cMcPAT/Scripts/skylake_power_analysis.xml -print_level 5
+   90  ./cMcPAT/mcpat -infile cMcPAT/Scripts/skylake_power_analysis.xml -print_level 5
+   91  cd cMcPAT/
+   92  ./mcpat -infile cMcPAT/Scripts/skylake_power_analysis.xml -print_level 5
+   93  .\mcpat -infile cMcPAT/Scripts/skylake_power_analysis.xml -print_level 5
+   94  ./mcpat -infile Scripts/skylake_power_analysis.xml -print_level 5
+   95  mcpat
+   96  chmod +x ./mcpat/
+   97  ./mcpat -infile Scripts/skylake_power_analysis.xml -print_level 5
+   98  cd cMcPAT/
+   99  ./mcpat/
+  100  ./mcpat
+  101  ./mcpat -help
+  102  ./mcpat
+  103  cd mcpat/
+  104  ls
+  105  ./mcpat -infile Scripts/skylake_power_analysis.xml -print_level 5
+  106  ./mcpat -infile ../Scripts/skylake_power_analysis.xml -print_level 5
+  107  . "/home/srajput/.cursor-server/cli/servers/Stable-af58d92614edb1f72bdd756615d131bf8dfa5290/server/out/vs/workbench/contrib/terminal/common/scripts/shellIntegration-bash.sh"
+  108  cd /home/srajput/energy_simulations && ls -la
+  109  cd gpie/test_samples && ls -la
+  110  cd ../../gem5-skylake-config/gem5-configs && ls -la
+  111  cd ../../gem5-skylake-config/gem5-configs/m5out && ls -la
+  112  cd m5out && grep -E "(total_instructions|committed_instructions|icache_reads|dcache_reads|total_cycles)" stats.txt
+  113  grep -E "(total_instructions|committed_instructions|icache_reads|dcache_reads|total_cycles)" stats.txt
+  114  head -20 stats.txt
+  115  grep -E "(system\.cpu|system\.subsystem\.cpu)" stats.txt | head -20
+  116  grep -E "(system\.subsystem\.icache|system\.subsystem\.dcache)" stats.txt
+  117  cd ../../cMcPAT/Scripts && ls -la
+  118  cd /home/srajput/energy_simulations/cMcPAT/Scripts && ls -la
+  119  cd /home/srajput/energy_simulations/cMcPAT/mcpat/ProcessorDescriptionFiles && ls -la
+  120  cd /home/srajput/energy_simulations/gem5-skylake-config/gem5-configs/m5out && grep -E "(simInsts|committedInsts|demandWrites)" stats.txt
+  121  grep -E "(l2cache|l3cache)" stats.txt
+  122  grep -E "(mem_cntrl|dram)" stats.txt
+  123  cd /home/srajput/energy_simulations/cMcPAT/Scripts && python3 GEM5ToMcPAT.py -o skylake_power_analysis_fixed.xml /home/srajput/energy_simulations/gem5-skylake-config/gem5-configs/m5out/stats.txt /home/srajput/energy_simulations/gem5-skylake-config/gem5-configs/m5out/config.json /home/srajput/energy_simulations/cMcPAT/mcpat/ProcessorDescriptionFiles/x86_Skylake_TunedCPU_template.xml
+  124  head -50 skylake_power_analysis_fixed.xml
+  125  grep -A 20 "total_instructions" skylake_power_analysis_fixed.xml
+  126  grep -A 5 -B 5 "icache_reads" skylake_power_analysis_fixed.xml
+  127  grep -n "stats\." skylake_power_analysis_fixed.xml
+  128  grep -A 5 "icache" skylake_power_analysis_fixed.xml
+  129  python3 GEM5ToMcPAT.py -o skylake_power_analysis_fixed2.xml /home/srajput/energy_simulations/gem5-skylake-config/gem5-configs/m5out/stats.txt /home/srajput/energy_simulations/gem5-skylake-config/gem5-configs/m5out/config.json /home/srajput/energy_simulations/cMcPAT/mcpat/ProcessorDescriptionFiles/x86_Skylake_TunedCPU_template.xml
+  130  grep -A 5 "icache_reads" skylake_power_analysis_fixed2.xml
+  131  grep -A 5 "L2_reads" skylake_power_analysis_fixed2.xml
+  132  grep -A 5 "memory_accesses" skylake_power_analysis_fixed2.xml
+  133  cd /home/srajput/energy_simulations/cMcPAT/mcpat && ./mcpat -infile /home/srajput/energy_simulations/cMcPAT/Scripts/skylake_power_analysis_fixed2.xml -print_level 5 > skylake_power_analysis_output_fixed.txt 2>&1
+  134  head -20 skylake_power_analysis_output_fixed.txt
+  135  tail -20 skylake_power_analysis_output_fixed.txt
+  136  ls -la skylake_power_analysis_output_fixed.txt && wc -l skylake_power_analysis_output_fixed.txt
+  137  cat skylake_power_analysis_output_fixed.txt
+  138  ./mcpat -infile /home/srajput/energy_simulations/cMcPAT/Scripts/skylake_power_analysis_fixed2.xml -print_level 5 2>&1 | head -50
+  139  cd /home/srajput/energy_simulations/cMcPAT/Scripts && python3 -c "import xml.etree.ElementTree as ET; ET.parse('skylake_power_analysis_fixed2.xml'); print('XML is valid')"
+  140  python3 print_energy.py /home/srajput/energy_simulations/cMcPAT/mcpat/skylake_power_analysis_output_fixed.txt /home/srajput/energy_simulations/gem5-skylake-config/gem5-configs/m5out/stats.txt > energy_report_fixed.txt
+  141  cd /home/srajput/energy_simulations/cMcPAT/mcpat && find . -name "*.xml" | head -5
+  142  cd /home/srajput/energy_simulations/cMcPAT/Scripts && python3 GEM5ToMcPAT.py -o penryn_test.xml /home/srajput/energy_simulations/gem5-skylake-config/gem5-configs/m5out/stats.txt /home/srajput/energy_simulations/gem5-skylake-config/gem5-configs/m5out/config.json /home/srajput/energy_simulations/cMcPAT/mcpat/ProcessorDescriptionFiles/Penryn.xml
+  143  cd /home/srajput/energy_simulations/cMcPAT/mcpat && ./mcpat -infile /home/srajput/energy_simulations/cMcPAT/Scripts/penryn_test.xml -print_level 5 > penryn_test_output.txt 2>&1
+  144  cd /home/srajput/energy_simulations && pwd
+  145  cd /home/srajput/energy_simulations/cMcPAT/Scripts && ls -la *.xml
+  146  grep -A 5 "icache_reads" skylake_power_analysis_fixed2.xml
+  147  grep -A 5 "L2_reads" skylake_power_analysis_fixed2.xml
+  148  grep -A 5 "memory_accesses" skylake_power_analysis_fixed2.xml
+  149  grep -A 20 "number_of_L2s" skylake_power_analysis_fixed2.xml
+  150  grep -A 10 "system.L20" skylake_power_analysis_fixed2.xml
+  151  cd /home/srajput/energy_simulations/cMcPAT/mcpat && grep -r "L2_config" ProcessorDescriptionFiles/ | head -3
+  152  cd /home/srajput/energy_simulations/gem5-skylake-config/gem5-configs && grep -r "size.*1MB" system/
+  153  grep -A 5 -B 5 "size.*1MB" system/caches.py
+  154  grep -A 5 -B 5 "size.*2MB" system/caches.py
+  155  cd /home/srajput/energy_simulations/cMcPAT/Scripts && python3 GEM5ToMcPAT.py -o skylake_power_analysis_corrected.xml /home/srajput/energy_simulations/gem5-skylake-config/gem5-configs/m5out/stats.txt /home/srajput/energy_simulations/gem5-skylake-config/gem5-configs/m5out/config.json /home/srajput/energy_simulations/cMcPAT/mcpat/ProcessorDescriptionFiles/x86_Skylake_TunedCPU_template.xml
+  156  grep -A 5 "L2_config" skylake_power_analysis_corrected.xml
+  157  python3 GEM5ToMcPAT.py -o skylake_power_analysis_final.xml /home/srajput/energy_simulations/gem5-skylake-config/gem5-configs/m5out/stats.txt /home/srajput/energy_simulations/gem5-skylake-config/gem5-configs/m5out/config.json /home/srajput/energy_simulations/cMcPAT/mcpat/ProcessorDescriptionFiles/x86_Skylake_TunedCPU_template.xml
+  158  grep -A 5 "icache_reads" skylake_power_analysis_final.xml
+  159  grep -A 5 "L2_reads" skylake_power_analysis_final.xml
+  160  grep -A 2 "L2_config" skylake_power_analysis_final.xml
+  161  cd /home/srajput/energy_simulations/cMcPAT/mcpat && ./mcpat -infile /home/srajput/energy_simulations/cMcPAT/Scripts/skylake_power_analysis_final.xml -print_level 5 > skylake_power_analysis_output_final.txt 2>&1
+  162  ls -la skylake_power_analysis_output_final.txt && wc -l skylake_power_analysis_output_final.txt
+  163  cat skylake_power_analysis_output_final.txt
+  164  ./mcpat -infile /home/srajput/energy_simulations/cMcPAT/Scripts/skylake_power_analysis_final.xml -print_level 10 2>&1 | head -100
+  165  cd /home/srajput/energy_simulations/cMcPAT/Scripts && python3 -c "import xml.etree.ElementTree as ET; ET.parse('skylake_power_analysis_final.xml'); print('XML is valid')"
+  166  python3 print_energy.py /home/srajput/energy_simulations/cMcPAT/mcpat/skylake_power_analysis_output_final.txt /home/srajput/energy_simulations/gem5-skylake-config/gem5-configs/m5out/stats.txt > energy_report_final.txt
+  167  cd /home/srajput/energy_simulations/cMcPAT/mcpat && find . -name "*.xml" -exec grep -l "L2_config.*1048576" {} \;
+  168  python3 GEM5ToMcPAT.py -o skylake_power_analysis_corrected_final.xml /home/srajput/energy_simulations/gem5-skylake-config/gem5-configs/m5out/stats.txt /home/srajput/energy_simulations/gem5-skylake-config/gem5-configs/m5out/config.json /home/srajput/energy_simulations/cMcPAT/mcpat/ProcessorDescriptionFiles/x86_Skylake_TunedCPU_template.xml
+  169  cd /home/srajput/energy_simulations/cMcPAT/Scripts && python3 GEM5ToMcPAT.py -o skylake_power_analysis_corrected_final.xml /home/srajput/energy_simulations/gem5-skylake-config/gem5-configs/m5out/stats.txt /home/srajput/energy_simulations/gem5-skylake-config/gem5-configs/m5out/config.json /home/srajput/energy_simulations/cMcPAT/mcpat/ProcessorDescriptionFiles/x86_Skylake_TunedCPU_template.xml
+  170  grep -A 2 "L2_config" skylake_power_analysis_corrected_final.xml
+  171  cd /home/srajput/energy_simulations/cMcPAT/mcpat && ./mcpat -infile /home/srajput/energy_simulations/cMcPAT/Scripts/skylake_power_analysis_corrected_final.xml -print_level 5 > skylake_power_analysis_output_corrected.txt 2>&1
+  172  cd /home/srajput/energy_simulations/cMcPAT/mcpat && ls -la skylake_power_analysis_output_corrected.txt && wc -l skylake_power_analysis_output_corrected.txt
+  173  cat skylake_power_analysis_output_corrected.txt
+  174  cd /home/srajput/energy_simulations/cMcPAT/Scripts && python3 GEM5ToMcPAT.py -o penryn_test_final.xml /home/srajput/energy_simulations/gem5-skylake-config/gem5-configs/m5out/stats.txt /home/srajput/energy_simulations/gem5-skylake-config/gem5-configs/m5out/config.json /home/srajput/energy_simulations/cMcPAT/mcpat/ProcessorDescriptionFiles/Penryn.xml
+  175  cd /home/srajput/energy_simulations/cMcPAT/mcpat && ./mcpat -infile /home/srajput/energy_simulations/cMcPAT/Scripts/penryn_test_final.xml -print_level 5 > penryn_test_output_final.txt 2>&1
+  176  ls -la penryn_test_output_final.txt
+  177  cat penryn_test_output_final.txt
+  178  ./mcpat --help 2>&1 | head -20
+  179  ./mcpat -infile test_simple.xml -print_level 5 > test_simple_output.txt 2>&1
+  180  ls -la test_simple_output.txt && wc -l test_simple_output.txt
+  181  ls -la *.o *.a 2>/dev/null || echo "No object files found"
+  182  ./mcpat -infile test_simple.xml -print_level 5 2>&1 | head -50
+  183  cd /home/srajput/energy_simulations/cMcPAT/Scripts && python3 GEM5ToMcPAT.py -o skylake_power_analysis_fixed_l2.xml /home/srajput/energy_simulations/gem5-skylake-config/gem5-configs/m5out/stats.txt /home/srajput/energy_simulations/gem5-skylake-config/gem5-configs/m5out/config.json /home/srajput/energy_simulations/cMcPAT/mcpat/ProcessorDescriptionFiles/x86_Skylake_TunedCPU_template.xml
+  184  grep -A 10 "system.core0.L2" skylake_power_analysis_fixed_l2.xml
+  185  grep "Private_L2" skylake_power_analysis_fixed_l2.xml
+  186  cd /home/srajput/energy_simulations/gem5-skylake-config/gem5-configs/m5out && head -20 stats.txt
+  187  cd /home/srajput/energy_simulations/cMcPAT/mcpat && ./mcpat -infile skylake_working.xml -print_level 5 > skylake_working_output.txt 2>&1
+  188  ls -la skylake_working_output.txt && wc -l skylake_working_output.txt
+  189  cat skylake_working_output.txt
+  190  python3 -c "import xml.etree.ElementTree as ET; ET.parse('skylake_working.xml'); print('XML is valid')"
+  191  ./mcpat -infile skylake_working.xml -print_level 10 2>&1 | head -100
+  192  cd /home/srajput/energy_simulations/cMcPAT/Scripts && python3 print_energy.py /home/srajput/energy_simulations/cMcPAT/mcpat/skylake_working_output.txt /home/srajput/energy_simulations/gem5-skylake-config/gem5-configs/m5out/stats.txt > energy_report_working.txt
+  193  cd /home/srajput/energy_simulations/cMcPAT/mcpat && ./mcpat -infile skylake_simple.xml -print_level 5 > skylake_simple_output.txt 2>&1
+  194  ls -la skylake_simple_output.txt && wc -l skylake_simple_output.txt
+  195  cat skylake_simple_output.txt
+  196  find /home/srajput/energy_simulations -name "*.xml" -exec grep -l "McPAT.*results" {} \; 2>/dev/null | head -5
+  197  find /home/srajput/energy_simulations -name "*mcpat*" -type f 2>/dev/null | head -10
+  198  ./obj_opt/mcpat -infile skylake_simple.xml -print_level 5 > skylake_simple_output_objopt.txt 2>&1
+  199  ls -la skylake_simple_output_objopt.txt && wc -l skylake_simple_output_objopt.txt
+  200  make clean
+  201  make
+  202  ./mcpat -infile skylake_simple.xml -print_level 5 > skylake_rebuilt_output.txt 2>&1
+  203  ls -la skylake_rebuilt_output.txt && wc -l skylake_rebuilt_output.txt
+  204  cat skylake_rebuilt_output.txt
+  205  ./mcpat -infile skylake_simple.xml -print_level 5 2>&1 | head -100
+  206  ldd ./mcpat
+  207  ./mcpat -infile test_minimal.xml -print_level 5 > test_minimal_output.txt 2>&1
+  208  ls -la test_minimal_output.txt && wc -l test_minimal_output.txt
+  209  ./mcpat -infile ProcessorDescriptionFiles/ARM_A9.xml -print_level 5 > arm_a9_test_output.txt 2>&1
+  210  ./mcpat -infile test_minimal.xml -print_level 5 > test_minimal_fixed_output.txt 2>&1
+  211  cat test_minimal_fixed_output.txt
+  212  ./mcpat -infile skylake_simple.xml -print_level 5 > skylake_fixed_output.txt 2>&1
+  213  cat skylake_fixed_output.txt
+  214  ./mcpat -infile skylake_simple.xml -print_level 10 2>&1 | head -100
+  215  ./mcpat -infile skylake_working.xml -print_level 5 > skylake_working_debug.txt 2>&1
+  216  cat skylake_working_debug.txt
+  217  ls -la skylake_working_debug.txt && wc -l skylake_working_debug.txt
+  218  ./mcpat -infile skylake_working.xml -print_level 5 2>&1 | head -100
+  219  ./mcpat -infile skylake_working_fixed.xml -print_level 5 > skylake_fixed_output.txt 2>&1
+  220  ls -la skylake_fixed_output.txt && wc -l skylake_fixed_output.txt
+  221  cat skylake_fixed_output.txt
+  222  ./mcpat -infile skylake_working_fixed.xml -print_level 5 2>&1 | head -100
+  223  ./mcpat -infile skylake_complete.xml -print_level 5 > skylake_complete_output.txt 2>&1
+  224  ls -la skylake_complete_output.txt && wc -l skylake_complete_output.txt
+  225  cat skylake_complete_output.txt
+  226  ./mcpat -infile ProcessorDescriptionFiles/ARM_A9.xml -print_level 5 > arm_a9_test.txt 2>&1
+  227  ls -la arm_a9_test.txt && wc -l arm_a9_test.txt
+  228  head -20 arm_a9_test.txt
+  229  ./mcpat -infile skylake_complete.xml -print_level 5 2>&1 | head -100
+  230  ./mcpat -infile skylake_minimal.xml -print_level 5 > skylake_minimal_output.txt 2>&1
+  231  ls -la skylake_minimal_output.txt && wc -l skylake_minimal_output.txt
+  232  ./mcpat -infile skylake_basic.xml -print_level 5 > skylake_basic_output.txt 2>&1
+  233  ls -la skylake_basic_output.txt && wc -l skylake_basic_output.txt
+  234  ./mcpat -infile skylake_basic.xml -print_level 5 2>&1 | head -100
+  235  ./mcpat -infile skylake_basic.xml -print_level 5 > skylake_basic_40nm_output.txt 2>&1
+  236  ls -la skylake_basic_40nm_output.txt && wc -l skylake_basic_40nm_output.txt
+  237  cp ProcessorDescriptionFiles/ARM_A9.xml skylake_from_arm.xml
+  238  ./mcpat -infile skylake_from_arm.xml -print_level 5 > skylake_from_arm_output.txt 2>&1
+  239  ls -la skylake_from_arm_output.txt && cat skylake_from_arm_output.txt
+  240  ./mcpat -infile skylake_from_arm.xml -print_level 5 > skylake_from_arm_output.txt 2>&1
+  241  cat skylake_from_arm_output.txt
+  242  xmllint --valid --noout skylake_from_arm.xml 2>&1 | head -20
+  243  ./mcpat -infile skylake_from_arm.xml -print_level 5 > skylake_from_arm_output.txt 2>&1
+  244  cat skylake_from_arm_output.txt
+  245  ./mcpat -infile skylake_from_arm.xml -print_level 5 > skylake_from_arm_output.txt 2>&1
+  246  cat skylake_from_arm_output.txt
+  247  ./mcpat -infile skylake_from_arm.xml -print_level 5 > skylake_from_arm_output.txt 2>&1
+  248  cat skylake_from_arm_output.txt
+  249  ./mcpat -infile skylake_simple_working.xml -print_level 5 > skylake_simple_working_output.txt 2>&1
+  250  ls -la skylake_simple_working_output.txt && wc -l skylake_simple_working_output.txt
+  251  cat skylake_simple_working_output.txt
+  252  ./mcpat -infile skylake_simple_working.xml -print_level 5 > skylak.txt 2>&1
+  253  ./mcpat -infile ProcessorDescriptionFiles/Xeon.xml -print_level 5 > skylak.txt 2>&1
+  254  ./mcpat -infile ProcessorDescriptionFiles/x86_AtomicSimpleCPU_template.xml -print_level 5 > skylak.txt 2>&1
+  255  . "/home/srajput/.cursor-server/cli/servers/Stable-af58d92614edb1f72bdd756615d131bf8dfa5290/server/out/vs/workbench/contrib/terminal/common/scripts/shellIntegration-bash.sh"
+  256  . "/home/srajput/.cursor-server/cli/servers/Stable-af58d92614edb1f72bdd756615d131bf8dfa5290/server/out/vs/workbench/contrib/terminal/common/scripts/shellIntegration-bash.sh"
+  257  . "/home/srajput/.cursor-server/cli/servers/Stable-af58d92614edb1f72bdd756615d131bf8dfa5290/server/out/vs/workbench/contrib/terminal/common/scripts/shellIntegration-bash.sh"
+  258  cd /home/srajput/energy_simulations/gem5-skylake-config && git status
+  259  cd /home/srajput/energy_simulations/gpie && git status
+  260  cd /home/srajput/energy_simulations/gem5-skylake-config && git diff gem5-configs/run-se.py
+  261  git diff gem5-configs/system/se.py
+  262  git diff gem5-configs/system/caches.py
+  263  git diff gem5-configs/system/fs.py
+  264  git diff gem5-configs/system/ruby_system.py
+  265  git diff gem5-configs/system/__init__.py
+  266  cd /home/srajput/energy_simulations/gpie && git diff gem5/gem5_api.py
+  267  cd /home/srajput/energy_simulations/gem5-skylake-config && git show HEAD:gem5-configs/run-se.py | head -50
+  268  git show HEAD:gem5-configs/system/se.py | head -80
+  269  . "/home/srajput/.cursor-server/cli/servers/Stable-af58d92614edb1f72bdd756615d131bf8dfa5290/server/out/vs/workbench/contrib/terminal/common/scripts/shellIntegration-bash.sh"
+  270  cd gpie/
+  271  . .venv/bin/ac
+  272  . .venv/bin/activate
+  273  cd ..
+  274  ./simple_gem5_mcpat_pipeline.sh 
+  275  ps a
+  276  clear
+  277  ./simple_gem5_mcpat_pipeline.sh 
+  278  ps a
+  279  ./simple_gem5_mcpat_pipeline.sh 
+  280  . "/home/srajput/.cursor-server/cli/servers/Stable-af58d92614edb1f72bdd756615d131bf8dfa5290/server/out/vs/workbench/contrib/terminal/common/scripts/shellIntegration-bash.sh"
+  281  ./simple_gem5_mcpat_pipeline.sh
+  282  cd cMcPAT/mcpat && ./mcpat -infile ../../skylake_power_analysis.xml -print_level 5
+  283  cd cMcPAT/mcpat && ./mcpat -infile ../../cMcPAT/Scripts/skylake_power_analysis.xml -print_level 5
+  284  ./mcpat -infile ../../cMcPAT/Scripts/skylake_power_analysis.xml -print_level 5
+  285  cd ../..
+  286  ./simple_gem5_mcpat_pipeline.sh
+  287  ./simple_gem5_mcpat_pipeline.sh
+  288  ./simple_gem5_mcpat_pipeline.sh
+  289  ./simple_gem5_mcpat_pipeline.sh
+  290  cd cMcPAT/mcpat && ./mcpat -infile ../../skylake_power_analysis.xml
+  291  cd .. && cd cMcPAT/mcpat && ./mcpat -infile ../../skylake_power_analysis.xml
+  292  cd mcpat && ./mcpat -infile ../../skylake_power_analysis.xml
+  293  cd .. && cd cMcPAT/mcpat && ./mcpat -infile ../../skylake_power_analysis.xml
+  294  cd mcpat && ./mcpat -infile ../../skylake_power_analysis.xml
+  295  cd .. && cd cMcPAT/mcpat && ./mcpat -infile ../../skylake_power_analysis.xml
+  296  cd mcpat && ./mcpat -infile ../../skylake_power_analysis.xml
+  297  cd .. && cd cMcPAT/mcpat && ./mcpat -infile ../../skylake_power_analysis.xml
+  298  cd mcpat && ./mcpat -infile ../../skylake_power_analysis.xml
+  299  cd .. && cd cMcPAT/mcpat && ./mcpat -infile ../../skylake_power_analysis.xml
+  300  cd mcpat && ./mcpat -infile ../../skylake_power_analysis.xml
+  301  ./mcpat -infile ../../skylake_power_analysis.xml
+  302  ls -la ../../skylake_power_analysis.xml
+  303  cd ../.. && ls -la skylake_power_analysis.xml
+  304  find . -name "skylake_power_analysis.xml" -type f
+  305  cd cMcPAT/mcpat && ./mcpat -infile ../Scripts/skylake_power_analysis.xml
+  306  cd cMcPAT/mcpat && timeout 30s ./mcpat -infile ../Scripts/skylake_power_analysis.xml
+  307  timeout 30s ./mcpat -infile ../Scripts/skylake_power_analysis.xml
+  308  timeout 30s ./mcpat -infile ProcessorDescriptionFiles/Xeon.xml
+  309  cd .. && ./simple_gem5_mcpat_pipeline.sh
+  310  cd .. && ./simple_gem5_mcpat_pipeline.sh
+  311  cd cMcPAT/mcpat && timeout 60s ./mcpat -infile ../Scripts/skylake_power_analysis.xml
+  312  timeout 30s ./mcpat -infile ProcessorDescriptionFiles/Xeon.xml
+  313  free -h && df -h
+  314  cd .. && ./simple_gem5_mcpat_pipeline.sh
+  315  cd .. && ./simple_gem5_mcpat_pipeline.sh
+  316  cd .. && ./simple_gem5_mcpat_pipeline.sh
+  317  cd energy_simulations/
+  318  ./simple_gem5_mcpat_pipeline.sh 
+  319  ./simple_gem5_mcpat_pipeline.sh 
+  320  . "/home/srajput/.cursor-server/cli/servers/Stable-af58d92614edb1f72bdd756615d131bf8dfa5290/server/out/vs/workbench/contrib/terminal/common/scripts/shellIntegration-bash.sh"
+  321  ps a
+  322  top
+  323  clear
+  324  cd gpie/
+  325  . .venv/bin/activate
+  326  cd ..
+  327  cd cMcPAT/
+  328  cd mcpat/
+  329  ./mcpat -infile ../Scripts/skylake_simple_working.xml -print_level 5 > skylak.txt 2>&1
+  330  ./mcpat -infile ../Scripts/skylake_power_analysis.xml -print_level 5 > skylak.txt 2>&1
+  331  cd ..
+  332  ./simple_gem5_mcpat_pipeline.sh 
+  333  cd energy_simulations/
+  334  ./simple_gem5_mcpat_pipeline.sh 
+  335  cd energy_simulations/
+  336  ./simple_gem5_mcpat_pipeline.sh 
+  337  . "/home/srajput/.cursor-server/cli/servers/Stable-af58d92614edb1f72bdd756615d131bf8dfa5290/server/out/vs/workbench/contrib/terminal/common/scripts/shellIntegration-bash.sh"
+  338  dpkg --configure -a
+  339  sudo dpkg --configure -a
+  340  dpkg -l | grep amduprof
+  341  sudo dpkg --remove --force-remove-reinstreq amduprof
+  342  sudo apt autoremove
+  343  sudo apt --fix-broken install
+  344  dpkg -l | grep amduprof
+  345  sudo apt update
+  346  g++ --version
+  347  cd sniper && find . -name "Makefile*" -exec grep -l "c\+\+20\|CXXFLAGS" {} \;
+  348  lscpu | grep -E "Model name|Architecture|CPU op-mode|CPU\(s\)"
+  349  lscpu | grep -E "Cache|Model name|CPU MHz|Thread|Core"
+  350  cat /proc/cpuinfo | grep -E "cache size|cache_alignment" | head -10
+  351  dmidecode -t cache 2>/dev/null | grep -E "Size|Level|Type" | head -20
+  352  find config/ -name "*.cfg" -exec grep -l "writethrough" {} \;
+  353  lscpu | grep -E "Model name|CPU MHz|Thread|Core|Cache|Architecture"
+  354  cat /proc/cpuinfo | grep -E "cache size|cache_alignment" | head -5
+  355  dmidecode -t memory 2>/dev/null | grep -E "Speed|Type|Size" | head -10
+  356  cat /proc/meminfo | grep -E "MemTotal|HugePages"
+  357  cat /sys/devices/system/cpu/cpu0/cache/index*/size 2>/dev/null | head -10
+  358  cat /sys/devices/system/cpu/cpu0/cache/index*/ways_of_associativity 2>/dev/null | head -10
+  359  cat /sys/devices/system/cpu/cpu0/cache/index*/level 2>/dev/null | head -10
+  360  lscpu | grep -E "NUMA|Socket|Core|Thread"
+  361  grep -r "shared_cores.*64" config/ | head -5
+  362  grep -n "shared_cores" config/epyc_9554p.cfg
+  363  ./run-sniper -c config/epyc_9554p.cfg -d output_dir -- ./test_simple
+  364  ls -la config/epyc_9554p.cfg
+  365  sed -n '165,175p' config/epyc_9554p.cfg
+  366  ./run-sniper -c config/epyc_9554p.cfg -d output_dir -- ./test_simple 2>&1 | head -20
+  367  cp config/epyc_9554p.cfg config/epyc_test.cfg
+  368  ./run-sniper -c config/epyc_test.cfg -d output_dir -- ./test_simple
+  369  diff config/beckton.cfg config/epyc_9554p.cfg | head -20
+  370  ./run-sniper -c config/epyc_9554p.cfg -d output_dir -- ./test_simple
+  371  ./run-sniper -c config/epyc_9554p.cfg -d output_dir -- ./test_simple
+  372  ./run-sniper -c config/epyc_9554p.cfg -d output_dir -- ./test_simple
+  373  ./run-sniper -c config/epyc_9554p.cfg -d output_dir -- ./test_simple
+  374  ./run-sniper -c config/epyc_9554p.cfg -d output_dir -- ./test_simple
+  375  ./run-sniper -c config/epyc_9554p.cfg -d output_dir -- ./test_simple
+  376  ./run-sniper -c config/epyc_9554p.cfg -d output_dir -- ./test_simple
+  377  ./run-sniper -c config/epyc_9554p.cfg -d output_dir -- ./test_simple
+  378  ./run-sniper -c config/epyc_9554p.cfg -d output_dir -- ./test_simple
+  379  bash -lc 'set -e; echo "== cpu0 cache metadata =="; for d in /sys/devices/system/cpu/cpu0/cache/index*; do lvl=$(cat $d/level); typ=$(cat $d/type); sz=$(cat $d/size); ways=$(cat $d/ways_of_associativity); line=$(cat $d/coherency_line_size); share=$(cat $d/shared_cpu_list); echo "L$lvl $typ size=$sz ways=$ways line=$line shared=$share"; done; echo; echo "== unique L3 groups (sample CPUs) =="; for cpu in 0 8 16 24 32 40 48 56; do d=/sys/devices/system/cpu/cpu$cpu/cache/index3; [ -d "$d" ] || continue; echo -n "cpu$cpu -> "; cat $d/shared_cpu_list; done'
+  380  . "/home/srajput/.cursor-server/cli/servers/Stable-af58d92614edb1f72bdd756615d131bf8dfa5290/server/out/vs/workbench/contrib/terminal/common/scripts/shellIntegration-bash.sh"
+  381  lscpu
+  382  git clone git@github.com:snipersim/snipersim.git
+  383  cd snipersim/
+  384  ls
+  385  where pintool
+  386  locate pintool
+  387  wget https://software.intel.com/sites/landingpage/pintool/downloads/pin-external-3.31-98869-gfa6f126a8-gcc-linux.tar.gz
+  388  tar -xzf pin-external-3.31-98869-gfa6f126a8-gcc-linux.tar.gz 
+  389  cd ..
+  390  cd sniper/
+  391  ls
+  392  make -j32
+  393  sudo apt-get update
+  394  sudo apt-get install -y libbz2-dev bzip2-devel
+  395  sudo apt-get install -y libbz2-dev
+  396  sudo apt-get install -y bzip2-devel
+  397  sudo apt-get install -y libbz2-dev
+  398  sudo apt-get install libbz2-dev
+  399  sudo apt-get install -y bzip2-devel
+  400  make -j32
+  401  make clean
+  402  make -j32
+  403  ls run-sniper
+  404  lscpu
+  405  ./run-sniper -c skylake.cfg -d output_dir -- ./test_simple 
+  406  ./run-sniper -c config/gainestown.cfg -d output_dir -- ./test_simple 
+  407  ./run-sniper -c config/epyc_9554p.cfg -d output_dir -- ./test_simple 
+  408  cd sniper/
+  409  cd tools/
+  410  python3 mcpat.py -d ../output_dir/ -o energy_report
+  411  cd tools/python3 mcpat.py -d ../output_dir/ -o energy_report --no-graph
+  412  cd tools/
+  413  python3 mcpat.py -d ../output_dir/ -o energy_report --no-graph
+  414  . "/home/srajput/.cursor-server/cli/servers/Stable-af58d92614edb1f72bdd756615d131bf8dfa5290/server/out/vs/workbench/contrib/terminal/common/scripts/shellIntegration-bash.sh"
+  415  . "/home/srajput/.cursor-server/cli/servers/Stable-af58d92614edb1f72bdd756615d131bf8dfa5290/server/out/vs/workbench/contrib/terminal/common/scripts/shellIntegration-bash.sh"
+  416  cd /home/srajput/energy_simulations/sniper && find output_dir -name "*.txt" -exec grep -l "network\|bus" {} \;
+  417  find output_dir -name "*.txt" -exec grep -l "network\|bus" {} \;
+  418  ls -la output_dir/
+  419  grep -i "network\|bus" output_dir/sim.out
+  420  grep -i "network\|bus" output_dir/sim.out | head -20
+  421  grep -i "network\|bus" output_dir/sim.out | wc -l
+  422  head -50 output_dir/sim.out
+  423  cd tools && python3 mcpat.py -d ../output_dir/ -o energy_report --no-graph
+  424  git status
+  425  git pull
+  426  ls
+  427  cd LLM-Sustainability-Rater/
+  428  ls
+  429  ps a
+  430  top
+  431  clear
+  432  cd lm_eval
+  433  ls
+  434  git status
+  435  cd ..
+  436  . .venv/bin/activate
+  437  python3 -m pip install chardet
+  438  clear
+  439  cd lm_eval
+  440  ls
+  441  nohup python3 main_run.py > run_log.txt 2>&1 &
+  442  cat run_log.txt 
+  443  ls
+  444  cat run_config.yaml 
+  445  ps a
+  446  ps a
+  447  ps a
+  448  kill -9 941394
+  449  ps a
+  450  ps a
+  451  cat run_log.txt 
+  452  cat run_log.txt 
+  453  cat run_log.txt 
+  454  cat run_log.txt 
+  455  cd LLM-Sustainability-Rater/
+  456  cd lm_eval
+  457  cat run_log.txt 
+  458  ps a
+  459  cat run_log.txt 
+  460  cat run_log.txt 
+  461  ps a
+  462  cat run_log.txt 
+  463  ps a
+  464  ps a
+  465  ps a
+  466  cat run_log.txt 
+  467  ps a
+  468  ps aux
+  469  ps a
+  470  cat run_log.txt 
+  471  cat run_log.txt 
+  472  cat run_log.txt 
+  473  ps a
+  474  cat run_log.txt 
+  475  cd LLM-Sustainability-Rater/
+  476  cd lm_eval
+  477  cat run_log.txt 
+  478  ps a
+  479  cat run_log.txt 
+  480  cat run_log.txt 
+  481  ps a
+  482  ps 
+  483  ps a
+  484  cd ..
+  485  cd ..
+  486  ps a
+  487  cd  LLM-Sustainability-Rater/lm_eval
+  488  cat run_log.txt 
+  489  ps a
+  490  ps a
+  491  cd LLM-Sustainability-Rater/
+  492  ps a
+  493  ls
+  494  ps a
+  495  top
+  496  ps a
+  497  kill -9 1115497
+  498  ls
+  499  ps a
+  500  clear
+  501  ls
+  502  ps a
+  503  ls
+  504  clear
+  505  ls
+  506  cd sniper/
+  507  ls
+  508  ./run_energy_analysis.sh 
+  509  ./run_energy_analysis.sh
+  510  history > delete.txt
