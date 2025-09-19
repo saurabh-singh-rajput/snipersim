@@ -83,12 +83,16 @@ def mcpat_bin():
   import platform
   mcpatdir = mcpat_path()
   if platform.architecture()[0] != '64bit':
+    print("[mcpat.py] Using 32-bit McPAT")
     suffix = '.32'
   elif True: # Disable if you don't want the McPAT/CACTI cache
+    print("[mcpat.py] Using 64-bit McPAT")
     suffix = '.cache'
   else:
+    print("[mcpat.py] Using 64-bit McPAT")
     suffix = ''
   bin = os.path.join(mcpatdir, 'mcpat-1.0%s' % suffix)
+  # bin = os.path.join(mcpatdir, 'mcpat-1.3')
   if os.path.exists(bin):
     # Fancy McPAT versions haven't been downloaded yet, use the plain old one
     return bin

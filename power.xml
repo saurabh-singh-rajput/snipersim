@@ -29,9 +29,9 @@
 		<param name="virtual_address_width" value="64"/>
 		<param name="physical_address_width" value="52"/>
 		<param name="virtual_memory_page_size" value="4096"/>
-		<stat name="total_cycles" value="2619150"/>
+		<stat name="total_cycles" value="360150"/>
 		<stat name="idle_cycles" value="0"/>
-		<stat name="busy_cycles"  value="2619150"/>
+		<stat name="busy_cycles"  value="360150"/>
 			<!--This page size(B) is complete different from the page size in Main memo secction. this page size is the size of 
 			virtual memory from OS/Archi perspective; the page size in Main memo secction is the actuall physical line in a DRAM bank  -->
 		<!-- *********************** cores ******************* -->
@@ -121,53 +121,53 @@
 			<param name="RAS_size" value="64"/>
 			<!-- general stats, defines simulation periods;require total, idle, and busy cycles for senity check  -->
 			<!-- please note: if target architecture is X86, then all the instrucions refer to (fused) micro-ops -->
-			<stat name="total_instructions" value="3818536"/>
-			<stat name="int_instructions" value="3208145"/>
+			<stat name="total_instructions" value="217275"/>
+			<stat name="int_instructions" value="166531"/>
 			<stat name="fp_instructions" value="0"/>
-			<stat name="branch_instructions" value="610391"/>
-			<stat name="branch_mispredictions" value="5299"/>
-			<stat name="load_instructions" value="513582"/>
-			<stat name="store_instructions" value="188065"/>
-			<stat name="committed_instructions" value="3818536"/>
-			<stat name="committed_int_instructions" value="3208145"/>
+			<stat name="branch_instructions" value="50744"/>
+			<stat name="branch_mispredictions" value="2402"/>
+			<stat name="load_instructions" value="51266"/>
+			<stat name="store_instructions" value="13892"/>
+			<stat name="committed_instructions" value="217275"/>
+			<stat name="committed_int_instructions" value="166531"/>
 			<stat name="committed_fp_instructions" value="0"/>
-			<stat name="total_cycles" value="2619150"/>
-			<stat name="idle_cycles" value="339"/>
-			<stat name="busy_cycles"  value="2618810"/>
+			<stat name="total_cycles" value="360150"/>
+			<stat name="idle_cycles" value="-63"/>
+			<stat name="busy_cycles"  value="360213"/>
 			<!-- instruction buffer stats -->
 			<!-- ROB stats, both RS and Phy based OoOs have ROB
 			performance simulator should capture the difference on accesses,
 			otherwise, McPAT has to guess based on number of commited instructions. -->
-			<stat name="ROB_reads" value="3936786"/>
-			<stat name="ROB_writes" value="3936786"/>
+			<stat name="ROB_reads" value="234733"/>
+			<stat name="ROB_writes" value="234733"/>
 			<!-- RAT accesses -->
-			<stat name="rename_reads" value="7637072"/>
-			<stat name="rename_writes" value="3818536"/>
+			<stat name="rename_reads" value="434550"/>
+			<stat name="rename_writes" value="217275"/>
 			<stat name="fp_rename_reads" value="0"/>
 			<stat name="fp_rename_writes" value="0"/>
 			<!-- decode and rename stage use this, should be total ic - nop -->
 			<!-- Inst window stats -->
-			<stat name="inst_window_reads" value="3818536"/>
-			<stat name="inst_window_writes" value="3818536"/>
-			<stat name="inst_window_wakeup_accesses" value="7637072"/>
-			<stat name="fp_inst_window_reads" value="1909268"/>
-			<stat name="fp_inst_window_writes" value="1909268"/>
-			<stat name="fp_inst_window_wakeup_accesses" value="3818536"/>
+			<stat name="inst_window_reads" value="217275"/>
+			<stat name="inst_window_writes" value="217275"/>
+			<stat name="inst_window_wakeup_accesses" value="434550"/>
+			<stat name="fp_inst_window_reads" value="108637"/>
+			<stat name="fp_inst_window_writes" value="108637"/>
+			<stat name="fp_inst_window_wakeup_accesses" value="217275"/>
 			<!--  RF accesses -->
-			<stat name="int_regfile_reads" value="5727804"/>
-			<stat name="float_regfile_reads" value="954634"/>
-			<stat name="int_regfile_writes" value="2863902"/>
-			<stat name="float_regfile_writes" value="477317"/>
+			<stat name="int_regfile_reads" value="325912"/>
+			<stat name="float_regfile_reads" value="54318"/>
+			<stat name="int_regfile_writes" value="162956"/>
+			<stat name="float_regfile_writes" value="27159"/>
 			<!-- accesses to the working reg -->
-			<stat name="function_calls" value="190926"/>
+			<stat name="function_calls" value="10863"/>
 			<stat name="context_switches" value="0"/>
 			<!-- Number of Windowes switches (number of function calls and returns)-->
 			<!-- Alu stats by default, the processor has one FPU that includes the divider and 
 			 multiplier. The fpu accesses should include accesses to multiplier and divider  -->
-			<stat name="ialu_accesses" value="3326395"/>
+			<stat name="ialu_accesses" value="183989"/>
 			<stat name="fpu_accesses" value="0"/>
 			<stat name="mul_accesses" value="0"/>
-			<stat name="cdb_alu_accesses" value="3326395"/>
+			<stat name="cdb_alu_accesses" value="183989"/>
 			<stat name="cdb_mul_accesses" value="0"/>
 			<stat name="cdb_fpu_accesses" value="0"/>
 			<!-- multiple cycle accesses should be counted multiple times, 
@@ -180,14 +180,14 @@
 			Future versions of McPAT may be able to reason the implicite access
 			based on param and stats of last level cache
 			The same rule applies to all cache access stats too!  -->
-			<stat name="IFU_duty_cycle" value="1.000000"/>
-			<stat name="LSU_duty_cycle" value="0.267891"/>
-			<stat name="MemManU_I_duty_cycle" value="1.000000"/>
-			<stat name="MemManU_D_duty_cycle" value="0.267891"/>
-			<stat name="ALU_duty_cycle" value="0.161992"/>
+			<stat name="IFU_duty_cycle" value="0.603290"/>
+			<stat name="LSU_duty_cycle" value="0.180919"/>
+			<stat name="MemManU_I_duty_cycle" value="0.603290"/>
+			<stat name="MemManU_D_duty_cycle" value="0.180919"/>
+			<stat name="ALU_duty_cycle" value="0.067032"/>
 			<stat name="MUL_duty_cycle" value="0.000000"/>
 			<stat name="FPU_duty_cycle" value="0.000000"/>
-			<stat name="ALU_cdb_duty_cycle" value="0.161992"/>
+			<stat name="ALU_cdb_duty_cycle" value="0.067032"/>
 			<stat name="MUL_cdb_duty_cycle" value="0.000000"/>
 			<stat name="FPU_cdb_duty_cycle" value="0.000000"/>
 			<param name="number_of_BPT" value="2"/>
@@ -202,8 +202,8 @@
 			</component>
 			<component id="system.core0.itlb" name="itlb">
 				<param name="number_entries" value="128"/>
-				<stat name="total_accesses" value="180027"/>
-				<stat name="total_misses" value="179"/>
+				<stat name="total_accesses" value="31091"/>
+				<stat name="total_misses" value="74"/>
 				<stat name="conflicts" value="0"/>
 				<!-- there is no write requests to itlb although writes happen to itlb after miss,
 				which is actually a replacement -->
@@ -215,14 +215,14 @@
 				<!-- the parameters are capacity,block_width, associativity,bank, throughput w.r.t. core clock, latency w.r.t. core clock,-->
 				<param name="buffer_sizes" value="16, 16, 16, 0"/>
 				<!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-				<stat name="read_accesses" value="180027"/>
-				<stat name="read_misses" value="1833"/>
+				<stat name="read_accesses" value="31091"/>
+				<stat name="read_misses" value="1063"/>
 				<stat name="conflicts" value="0"/>
 			</component>
 			<component id="system.core0.dtlb" name="dtlb">
 				<param name="number_entries" value="256"/>
-				<stat name="total_accesses" value="701647"/>
-				<stat name="total_misses" value="17112"/>
+				<stat name="total_accesses" value="65158"/>
+				<stat name="total_misses" value="3217"/>
 				<stat name="conflicts" value="0"/>
 			</component>
 			<component id="system.core0.dcache" name="dcache">
@@ -230,16 +230,16 @@
 				<param name="dcache_config" value="32768,64,8,2,10,40, 0, 1"/>
 				<param name="buffer_sizes" value="16, 16, 16, 16"/>
 				<!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-				<stat name="read_accesses" value="513582"/>
-				<stat name="write_accesses" value="188065"/>
-				<stat name="read_misses" value="14279"/>
-				<stat name="write_misses" value="2833"/>
+				<stat name="read_accesses" value="51266"/>
+				<stat name="write_accesses" value="13892"/>
+				<stat name="read_misses" value="2510"/>
+				<stat name="write_misses" value="707"/>
 				<stat name="conflicts" value="0"/>
 			</component>
 			<component id="system.core0.BTB" name="BTB">
 				<!-- all the buffer related are optional -->
 				<param name="BTB_config" value="18944,8,4,1, 1,3"/>
-				<stat name="read_accesses" value="610391"/>
+				<stat name="read_accesses" value="50744"/>
 				<stat name="write_accesses" value="0"/>
 				<!-- the parameters are capacity,block_width,associativity,bank, throughput w.r.t. core clock, latency w.r.t. core clock,-->
 			</component>
@@ -341,8 +341,8 @@
 			<stat name="committed_instructions" value="0"/>
 			<stat name="committed_int_instructions" value="0"/>
 			<stat name="committed_fp_instructions" value="0"/>
-			<stat name="total_cycles" value="2619150"/>
-			<stat name="idle_cycles" value="2619150"/>
+			<stat name="total_cycles" value="360150"/>
+			<stat name="idle_cycles" value="360150"/>
 			<stat name="busy_cycles"  value="0"/>
 			<!-- instruction buffer stats -->
 			<!-- ROB stats, both RS and Phy based OoOs have ROB
@@ -551,8 +551,8 @@
 			<stat name="committed_instructions" value="0"/>
 			<stat name="committed_int_instructions" value="0"/>
 			<stat name="committed_fp_instructions" value="0"/>
-			<stat name="total_cycles" value="2619150"/>
-			<stat name="idle_cycles" value="2619150"/>
+			<stat name="total_cycles" value="360150"/>
+			<stat name="idle_cycles" value="360150"/>
 			<stat name="busy_cycles"  value="0"/>
 			<!-- instruction buffer stats -->
 			<!-- ROB stats, both RS and Phy based OoOs have ROB
@@ -761,8 +761,8 @@
 			<stat name="committed_instructions" value="0"/>
 			<stat name="committed_int_instructions" value="0"/>
 			<stat name="committed_fp_instructions" value="0"/>
-			<stat name="total_cycles" value="2619150"/>
-			<stat name="idle_cycles" value="2619150"/>
+			<stat name="total_cycles" value="360150"/>
+			<stat name="idle_cycles" value="360150"/>
 			<stat name="busy_cycles"  value="0"/>
 			<!-- instruction buffer stats -->
 			<!-- ROB stats, both RS and Phy based OoOs have ROB
@@ -971,8 +971,8 @@
 			<stat name="committed_instructions" value="0"/>
 			<stat name="committed_int_instructions" value="0"/>
 			<stat name="committed_fp_instructions" value="0"/>
-			<stat name="total_cycles" value="2619150"/>
-			<stat name="idle_cycles" value="2619150"/>
+			<stat name="total_cycles" value="360150"/>
+			<stat name="idle_cycles" value="360150"/>
 			<stat name="busy_cycles"  value="0"/>
 			<!-- instruction buffer stats -->
 			<!-- ROB stats, both RS and Phy based OoOs have ROB
@@ -1181,8 +1181,8 @@
 			<stat name="committed_instructions" value="0"/>
 			<stat name="committed_int_instructions" value="0"/>
 			<stat name="committed_fp_instructions" value="0"/>
-			<stat name="total_cycles" value="2619150"/>
-			<stat name="idle_cycles" value="2619150"/>
+			<stat name="total_cycles" value="360150"/>
+			<stat name="idle_cycles" value="360150"/>
 			<stat name="busy_cycles"  value="0"/>
 			<!-- instruction buffer stats -->
 			<!-- ROB stats, both RS and Phy based OoOs have ROB
@@ -1391,8 +1391,8 @@
 			<stat name="committed_instructions" value="0"/>
 			<stat name="committed_int_instructions" value="0"/>
 			<stat name="committed_fp_instructions" value="0"/>
-			<stat name="total_cycles" value="2619150"/>
-			<stat name="idle_cycles" value="2619150"/>
+			<stat name="total_cycles" value="360150"/>
+			<stat name="idle_cycles" value="360150"/>
 			<stat name="busy_cycles"  value="0"/>
 			<!-- instruction buffer stats -->
 			<!-- ROB stats, both RS and Phy based OoOs have ROB
@@ -1601,8 +1601,8 @@
 			<stat name="committed_instructions" value="0"/>
 			<stat name="committed_int_instructions" value="0"/>
 			<stat name="committed_fp_instructions" value="0"/>
-			<stat name="total_cycles" value="2619150"/>
-			<stat name="idle_cycles" value="2619150"/>
+			<stat name="total_cycles" value="360150"/>
+			<stat name="idle_cycles" value="360150"/>
 			<stat name="busy_cycles"  value="0"/>
 			<!-- instruction buffer stats -->
 			<!-- ROB stats, both RS and Phy based OoOs have ROB
@@ -1811,8 +1811,8 @@
 			<stat name="committed_instructions" value="0"/>
 			<stat name="committed_int_instructions" value="0"/>
 			<stat name="committed_fp_instructions" value="0"/>
-			<stat name="total_cycles" value="2619150"/>
-			<stat name="idle_cycles" value="2619150"/>
+			<stat name="total_cycles" value="360150"/>
+			<stat name="idle_cycles" value="360150"/>
 			<stat name="busy_cycles"  value="0"/>
 			<!-- instruction buffer stats -->
 			<!-- ROB stats, both RS and Phy based OoOs have ROB
@@ -2021,8 +2021,8 @@
 			<stat name="committed_instructions" value="0"/>
 			<stat name="committed_int_instructions" value="0"/>
 			<stat name="committed_fp_instructions" value="0"/>
-			<stat name="total_cycles" value="2619150"/>
-			<stat name="idle_cycles" value="2619150"/>
+			<stat name="total_cycles" value="360150"/>
+			<stat name="idle_cycles" value="360150"/>
 			<stat name="busy_cycles"  value="0"/>
 			<!-- instruction buffer stats -->
 			<!-- ROB stats, both RS and Phy based OoOs have ROB
@@ -2231,8 +2231,8 @@
 			<stat name="committed_instructions" value="0"/>
 			<stat name="committed_int_instructions" value="0"/>
 			<stat name="committed_fp_instructions" value="0"/>
-			<stat name="total_cycles" value="2619150"/>
-			<stat name="idle_cycles" value="2619150"/>
+			<stat name="total_cycles" value="360150"/>
+			<stat name="idle_cycles" value="360150"/>
 			<stat name="busy_cycles"  value="0"/>
 			<!-- instruction buffer stats -->
 			<!-- ROB stats, both RS and Phy based OoOs have ROB
@@ -2441,8 +2441,8 @@
 			<stat name="committed_instructions" value="0"/>
 			<stat name="committed_int_instructions" value="0"/>
 			<stat name="committed_fp_instructions" value="0"/>
-			<stat name="total_cycles" value="2619150"/>
-			<stat name="idle_cycles" value="2619150"/>
+			<stat name="total_cycles" value="360150"/>
+			<stat name="idle_cycles" value="360150"/>
 			<stat name="busy_cycles"  value="0"/>
 			<!-- instruction buffer stats -->
 			<!-- ROB stats, both RS and Phy based OoOs have ROB
@@ -2651,8 +2651,8 @@
 			<stat name="committed_instructions" value="0"/>
 			<stat name="committed_int_instructions" value="0"/>
 			<stat name="committed_fp_instructions" value="0"/>
-			<stat name="total_cycles" value="2619150"/>
-			<stat name="idle_cycles" value="2619150"/>
+			<stat name="total_cycles" value="360150"/>
+			<stat name="idle_cycles" value="360150"/>
 			<stat name="busy_cycles"  value="0"/>
 			<!-- instruction buffer stats -->
 			<!-- ROB stats, both RS and Phy based OoOs have ROB
@@ -2861,8 +2861,8 @@
 			<stat name="committed_instructions" value="0"/>
 			<stat name="committed_int_instructions" value="0"/>
 			<stat name="committed_fp_instructions" value="0"/>
-			<stat name="total_cycles" value="2619150"/>
-			<stat name="idle_cycles" value="2619150"/>
+			<stat name="total_cycles" value="360150"/>
+			<stat name="idle_cycles" value="360150"/>
 			<stat name="busy_cycles"  value="0"/>
 			<!-- instruction buffer stats -->
 			<!-- ROB stats, both RS and Phy based OoOs have ROB
@@ -3071,8 +3071,8 @@
 			<stat name="committed_instructions" value="0"/>
 			<stat name="committed_int_instructions" value="0"/>
 			<stat name="committed_fp_instructions" value="0"/>
-			<stat name="total_cycles" value="2619150"/>
-			<stat name="idle_cycles" value="2619150"/>
+			<stat name="total_cycles" value="360150"/>
+			<stat name="idle_cycles" value="360150"/>
 			<stat name="busy_cycles"  value="0"/>
 			<!-- instruction buffer stats -->
 			<!-- ROB stats, both RS and Phy based OoOs have ROB
@@ -3281,8 +3281,8 @@
 			<stat name="committed_instructions" value="0"/>
 			<stat name="committed_int_instructions" value="0"/>
 			<stat name="committed_fp_instructions" value="0"/>
-			<stat name="total_cycles" value="2619150"/>
-			<stat name="idle_cycles" value="2619150"/>
+			<stat name="total_cycles" value="360150"/>
+			<stat name="idle_cycles" value="360150"/>
 			<stat name="busy_cycles"  value="0"/>
 			<!-- instruction buffer stats -->
 			<!-- ROB stats, both RS and Phy based OoOs have ROB
@@ -3491,8 +3491,8 @@
 			<stat name="committed_instructions" value="0"/>
 			<stat name="committed_int_instructions" value="0"/>
 			<stat name="committed_fp_instructions" value="0"/>
-			<stat name="total_cycles" value="2619150"/>
-			<stat name="idle_cycles" value="2619150"/>
+			<stat name="total_cycles" value="360150"/>
+			<stat name="idle_cycles" value="360150"/>
 			<stat name="busy_cycles"  value="0"/>
 			<!-- instruction buffer stats -->
 			<!-- ROB stats, both RS and Phy based OoOs have ROB
@@ -3701,8 +3701,8 @@
 			<stat name="committed_instructions" value="0"/>
 			<stat name="committed_int_instructions" value="0"/>
 			<stat name="committed_fp_instructions" value="0"/>
-			<stat name="total_cycles" value="2619150"/>
-			<stat name="idle_cycles" value="2619150"/>
+			<stat name="total_cycles" value="360150"/>
+			<stat name="idle_cycles" value="360150"/>
 			<stat name="busy_cycles"  value="0"/>
 			<!-- instruction buffer stats -->
 			<!-- ROB stats, both RS and Phy based OoOs have ROB
@@ -3911,8 +3911,8 @@
 			<stat name="committed_instructions" value="0"/>
 			<stat name="committed_int_instructions" value="0"/>
 			<stat name="committed_fp_instructions" value="0"/>
-			<stat name="total_cycles" value="2619150"/>
-			<stat name="idle_cycles" value="2619150"/>
+			<stat name="total_cycles" value="360150"/>
+			<stat name="idle_cycles" value="360150"/>
 			<stat name="busy_cycles"  value="0"/>
 			<!-- instruction buffer stats -->
 			<!-- ROB stats, both RS and Phy based OoOs have ROB
@@ -4121,8 +4121,8 @@
 			<stat name="committed_instructions" value="0"/>
 			<stat name="committed_int_instructions" value="0"/>
 			<stat name="committed_fp_instructions" value="0"/>
-			<stat name="total_cycles" value="2619150"/>
-			<stat name="idle_cycles" value="2619150"/>
+			<stat name="total_cycles" value="360150"/>
+			<stat name="idle_cycles" value="360150"/>
 			<stat name="busy_cycles"  value="0"/>
 			<!-- instruction buffer stats -->
 			<!-- ROB stats, both RS and Phy based OoOs have ROB
@@ -4331,8 +4331,8 @@
 			<stat name="committed_instructions" value="0"/>
 			<stat name="committed_int_instructions" value="0"/>
 			<stat name="committed_fp_instructions" value="0"/>
-			<stat name="total_cycles" value="2619150"/>
-			<stat name="idle_cycles" value="2619150"/>
+			<stat name="total_cycles" value="360150"/>
+			<stat name="idle_cycles" value="360150"/>
 			<stat name="busy_cycles"  value="0"/>
 			<!-- instruction buffer stats -->
 			<!-- ROB stats, both RS and Phy based OoOs have ROB
@@ -4541,8 +4541,8 @@
 			<stat name="committed_instructions" value="0"/>
 			<stat name="committed_int_instructions" value="0"/>
 			<stat name="committed_fp_instructions" value="0"/>
-			<stat name="total_cycles" value="2619150"/>
-			<stat name="idle_cycles" value="2619150"/>
+			<stat name="total_cycles" value="360150"/>
+			<stat name="idle_cycles" value="360150"/>
 			<stat name="busy_cycles"  value="0"/>
 			<!-- instruction buffer stats -->
 			<!-- ROB stats, both RS and Phy based OoOs have ROB
@@ -4751,8 +4751,8 @@
 			<stat name="committed_instructions" value="0"/>
 			<stat name="committed_int_instructions" value="0"/>
 			<stat name="committed_fp_instructions" value="0"/>
-			<stat name="total_cycles" value="2619150"/>
-			<stat name="idle_cycles" value="2619150"/>
+			<stat name="total_cycles" value="360150"/>
+			<stat name="idle_cycles" value="360150"/>
 			<stat name="busy_cycles"  value="0"/>
 			<!-- instruction buffer stats -->
 			<!-- ROB stats, both RS and Phy based OoOs have ROB
@@ -4961,8 +4961,8 @@
 			<stat name="committed_instructions" value="0"/>
 			<stat name="committed_int_instructions" value="0"/>
 			<stat name="committed_fp_instructions" value="0"/>
-			<stat name="total_cycles" value="2619150"/>
-			<stat name="idle_cycles" value="2619150"/>
+			<stat name="total_cycles" value="360150"/>
+			<stat name="idle_cycles" value="360150"/>
 			<stat name="busy_cycles"  value="0"/>
 			<!-- instruction buffer stats -->
 			<!-- ROB stats, both RS and Phy based OoOs have ROB
@@ -5171,8 +5171,8 @@
 			<stat name="committed_instructions" value="0"/>
 			<stat name="committed_int_instructions" value="0"/>
 			<stat name="committed_fp_instructions" value="0"/>
-			<stat name="total_cycles" value="2619150"/>
-			<stat name="idle_cycles" value="2619150"/>
+			<stat name="total_cycles" value="360150"/>
+			<stat name="idle_cycles" value="360150"/>
 			<stat name="busy_cycles"  value="0"/>
 			<!-- instruction buffer stats -->
 			<!-- ROB stats, both RS and Phy based OoOs have ROB
@@ -5381,8 +5381,8 @@
 			<stat name="committed_instructions" value="0"/>
 			<stat name="committed_int_instructions" value="0"/>
 			<stat name="committed_fp_instructions" value="0"/>
-			<stat name="total_cycles" value="2619150"/>
-			<stat name="idle_cycles" value="2619150"/>
+			<stat name="total_cycles" value="360150"/>
+			<stat name="idle_cycles" value="360150"/>
 			<stat name="busy_cycles"  value="0"/>
 			<!-- instruction buffer stats -->
 			<!-- ROB stats, both RS and Phy based OoOs have ROB
@@ -5591,8 +5591,8 @@
 			<stat name="committed_instructions" value="0"/>
 			<stat name="committed_int_instructions" value="0"/>
 			<stat name="committed_fp_instructions" value="0"/>
-			<stat name="total_cycles" value="2619150"/>
-			<stat name="idle_cycles" value="2619150"/>
+			<stat name="total_cycles" value="360150"/>
+			<stat name="idle_cycles" value="360150"/>
 			<stat name="busy_cycles"  value="0"/>
 			<!-- instruction buffer stats -->
 			<!-- ROB stats, both RS and Phy based OoOs have ROB
@@ -5801,8 +5801,8 @@
 			<stat name="committed_instructions" value="0"/>
 			<stat name="committed_int_instructions" value="0"/>
 			<stat name="committed_fp_instructions" value="0"/>
-			<stat name="total_cycles" value="2619150"/>
-			<stat name="idle_cycles" value="2619150"/>
+			<stat name="total_cycles" value="360150"/>
+			<stat name="idle_cycles" value="360150"/>
 			<stat name="busy_cycles"  value="0"/>
 			<!-- instruction buffer stats -->
 			<!-- ROB stats, both RS and Phy based OoOs have ROB
@@ -6011,8 +6011,8 @@
 			<stat name="committed_instructions" value="0"/>
 			<stat name="committed_int_instructions" value="0"/>
 			<stat name="committed_fp_instructions" value="0"/>
-			<stat name="total_cycles" value="2619150"/>
-			<stat name="idle_cycles" value="2619150"/>
+			<stat name="total_cycles" value="360150"/>
+			<stat name="idle_cycles" value="360150"/>
 			<stat name="busy_cycles"  value="0"/>
 			<!-- instruction buffer stats -->
 			<!-- ROB stats, both RS and Phy based OoOs have ROB
@@ -6221,8 +6221,8 @@
 			<stat name="committed_instructions" value="0"/>
 			<stat name="committed_int_instructions" value="0"/>
 			<stat name="committed_fp_instructions" value="0"/>
-			<stat name="total_cycles" value="2619150"/>
-			<stat name="idle_cycles" value="2619150"/>
+			<stat name="total_cycles" value="360150"/>
+			<stat name="idle_cycles" value="360150"/>
 			<stat name="busy_cycles"  value="0"/>
 			<!-- instruction buffer stats -->
 			<!-- ROB stats, both RS and Phy based OoOs have ROB
@@ -6431,8 +6431,8 @@
 			<stat name="committed_instructions" value="0"/>
 			<stat name="committed_int_instructions" value="0"/>
 			<stat name="committed_fp_instructions" value="0"/>
-			<stat name="total_cycles" value="2619150"/>
-			<stat name="idle_cycles" value="2619150"/>
+			<stat name="total_cycles" value="360150"/>
+			<stat name="idle_cycles" value="360150"/>
 			<stat name="busy_cycles"  value="0"/>
 			<!-- instruction buffer stats -->
 			<!-- ROB stats, both RS and Phy based OoOs have ROB
@@ -6641,8 +6641,8 @@
 			<stat name="committed_instructions" value="0"/>
 			<stat name="committed_int_instructions" value="0"/>
 			<stat name="committed_fp_instructions" value="0"/>
-			<stat name="total_cycles" value="2619150"/>
-			<stat name="idle_cycles" value="2619150"/>
+			<stat name="total_cycles" value="360150"/>
+			<stat name="idle_cycles" value="360150"/>
 			<stat name="busy_cycles"  value="0"/>
 			<!-- instruction buffer stats -->
 			<!-- ROB stats, both RS and Phy based OoOs have ROB
@@ -6851,8 +6851,8 @@
 			<stat name="committed_instructions" value="0"/>
 			<stat name="committed_int_instructions" value="0"/>
 			<stat name="committed_fp_instructions" value="0"/>
-			<stat name="total_cycles" value="2619150"/>
-			<stat name="idle_cycles" value="2619150"/>
+			<stat name="total_cycles" value="360150"/>
+			<stat name="idle_cycles" value="360150"/>
 			<stat name="busy_cycles"  value="0"/>
 			<!-- instruction buffer stats -->
 			<!-- ROB stats, both RS and Phy based OoOs have ROB
@@ -7061,8 +7061,8 @@
 			<stat name="committed_instructions" value="0"/>
 			<stat name="committed_int_instructions" value="0"/>
 			<stat name="committed_fp_instructions" value="0"/>
-			<stat name="total_cycles" value="2619150"/>
-			<stat name="idle_cycles" value="2619150"/>
+			<stat name="total_cycles" value="360150"/>
+			<stat name="idle_cycles" value="360150"/>
 			<stat name="busy_cycles"  value="0"/>
 			<!-- instruction buffer stats -->
 			<!-- ROB stats, both RS and Phy based OoOs have ROB
@@ -7271,8 +7271,8 @@
 			<stat name="committed_instructions" value="0"/>
 			<stat name="committed_int_instructions" value="0"/>
 			<stat name="committed_fp_instructions" value="0"/>
-			<stat name="total_cycles" value="2619150"/>
-			<stat name="idle_cycles" value="2619150"/>
+			<stat name="total_cycles" value="360150"/>
+			<stat name="idle_cycles" value="360150"/>
 			<stat name="busy_cycles"  value="0"/>
 			<!-- instruction buffer stats -->
 			<!-- ROB stats, both RS and Phy based OoOs have ROB
@@ -7481,8 +7481,8 @@
 			<stat name="committed_instructions" value="0"/>
 			<stat name="committed_int_instructions" value="0"/>
 			<stat name="committed_fp_instructions" value="0"/>
-			<stat name="total_cycles" value="2619150"/>
-			<stat name="idle_cycles" value="2619150"/>
+			<stat name="total_cycles" value="360150"/>
+			<stat name="idle_cycles" value="360150"/>
 			<stat name="busy_cycles"  value="0"/>
 			<!-- instruction buffer stats -->
 			<!-- ROB stats, both RS and Phy based OoOs have ROB
@@ -7691,8 +7691,8 @@
 			<stat name="committed_instructions" value="0"/>
 			<stat name="committed_int_instructions" value="0"/>
 			<stat name="committed_fp_instructions" value="0"/>
-			<stat name="total_cycles" value="2619150"/>
-			<stat name="idle_cycles" value="2619150"/>
+			<stat name="total_cycles" value="360150"/>
+			<stat name="idle_cycles" value="360150"/>
 			<stat name="busy_cycles"  value="0"/>
 			<!-- instruction buffer stats -->
 			<!-- ROB stats, both RS and Phy based OoOs have ROB
@@ -7901,8 +7901,8 @@
 			<stat name="committed_instructions" value="0"/>
 			<stat name="committed_int_instructions" value="0"/>
 			<stat name="committed_fp_instructions" value="0"/>
-			<stat name="total_cycles" value="2619150"/>
-			<stat name="idle_cycles" value="2619150"/>
+			<stat name="total_cycles" value="360150"/>
+			<stat name="idle_cycles" value="360150"/>
 			<stat name="busy_cycles"  value="0"/>
 			<!-- instruction buffer stats -->
 			<!-- ROB stats, both RS and Phy based OoOs have ROB
@@ -8111,8 +8111,8 @@
 			<stat name="committed_instructions" value="0"/>
 			<stat name="committed_int_instructions" value="0"/>
 			<stat name="committed_fp_instructions" value="0"/>
-			<stat name="total_cycles" value="2619150"/>
-			<stat name="idle_cycles" value="2619150"/>
+			<stat name="total_cycles" value="360150"/>
+			<stat name="idle_cycles" value="360150"/>
 			<stat name="busy_cycles"  value="0"/>
 			<!-- instruction buffer stats -->
 			<!-- ROB stats, both RS and Phy based OoOs have ROB
@@ -8321,8 +8321,8 @@
 			<stat name="committed_instructions" value="0"/>
 			<stat name="committed_int_instructions" value="0"/>
 			<stat name="committed_fp_instructions" value="0"/>
-			<stat name="total_cycles" value="2619150"/>
-			<stat name="idle_cycles" value="2619150"/>
+			<stat name="total_cycles" value="360150"/>
+			<stat name="idle_cycles" value="360150"/>
 			<stat name="busy_cycles"  value="0"/>
 			<!-- instruction buffer stats -->
 			<!-- ROB stats, both RS and Phy based OoOs have ROB
@@ -8531,8 +8531,8 @@
 			<stat name="committed_instructions" value="0"/>
 			<stat name="committed_int_instructions" value="0"/>
 			<stat name="committed_fp_instructions" value="0"/>
-			<stat name="total_cycles" value="2619150"/>
-			<stat name="idle_cycles" value="2619150"/>
+			<stat name="total_cycles" value="360150"/>
+			<stat name="idle_cycles" value="360150"/>
 			<stat name="busy_cycles"  value="0"/>
 			<!-- instruction buffer stats -->
 			<!-- ROB stats, both RS and Phy based OoOs have ROB
@@ -8741,8 +8741,8 @@
 			<stat name="committed_instructions" value="0"/>
 			<stat name="committed_int_instructions" value="0"/>
 			<stat name="committed_fp_instructions" value="0"/>
-			<stat name="total_cycles" value="2619150"/>
-			<stat name="idle_cycles" value="2619150"/>
+			<stat name="total_cycles" value="360150"/>
+			<stat name="idle_cycles" value="360150"/>
 			<stat name="busy_cycles"  value="0"/>
 			<!-- instruction buffer stats -->
 			<!-- ROB stats, both RS and Phy based OoOs have ROB
@@ -8951,8 +8951,8 @@
 			<stat name="committed_instructions" value="0"/>
 			<stat name="committed_int_instructions" value="0"/>
 			<stat name="committed_fp_instructions" value="0"/>
-			<stat name="total_cycles" value="2619150"/>
-			<stat name="idle_cycles" value="2619150"/>
+			<stat name="total_cycles" value="360150"/>
+			<stat name="idle_cycles" value="360150"/>
 			<stat name="busy_cycles"  value="0"/>
 			<!-- instruction buffer stats -->
 			<!-- ROB stats, both RS and Phy based OoOs have ROB
@@ -9161,8 +9161,8 @@
 			<stat name="committed_instructions" value="0"/>
 			<stat name="committed_int_instructions" value="0"/>
 			<stat name="committed_fp_instructions" value="0"/>
-			<stat name="total_cycles" value="2619150"/>
-			<stat name="idle_cycles" value="2619150"/>
+			<stat name="total_cycles" value="360150"/>
+			<stat name="idle_cycles" value="360150"/>
 			<stat name="busy_cycles"  value="0"/>
 			<!-- instruction buffer stats -->
 			<!-- ROB stats, both RS and Phy based OoOs have ROB
@@ -9371,8 +9371,8 @@
 			<stat name="committed_instructions" value="0"/>
 			<stat name="committed_int_instructions" value="0"/>
 			<stat name="committed_fp_instructions" value="0"/>
-			<stat name="total_cycles" value="2619150"/>
-			<stat name="idle_cycles" value="2619150"/>
+			<stat name="total_cycles" value="360150"/>
+			<stat name="idle_cycles" value="360150"/>
 			<stat name="busy_cycles"  value="0"/>
 			<!-- instruction buffer stats -->
 			<!-- ROB stats, both RS and Phy based OoOs have ROB
@@ -9581,8 +9581,8 @@
 			<stat name="committed_instructions" value="0"/>
 			<stat name="committed_int_instructions" value="0"/>
 			<stat name="committed_fp_instructions" value="0"/>
-			<stat name="total_cycles" value="2619150"/>
-			<stat name="idle_cycles" value="2619150"/>
+			<stat name="total_cycles" value="360150"/>
+			<stat name="idle_cycles" value="360150"/>
 			<stat name="busy_cycles"  value="0"/>
 			<!-- instruction buffer stats -->
 			<!-- ROB stats, both RS and Phy based OoOs have ROB
@@ -9791,8 +9791,8 @@
 			<stat name="committed_instructions" value="0"/>
 			<stat name="committed_int_instructions" value="0"/>
 			<stat name="committed_fp_instructions" value="0"/>
-			<stat name="total_cycles" value="2619150"/>
-			<stat name="idle_cycles" value="2619150"/>
+			<stat name="total_cycles" value="360150"/>
+			<stat name="idle_cycles" value="360150"/>
 			<stat name="busy_cycles"  value="0"/>
 			<!-- instruction buffer stats -->
 			<!-- ROB stats, both RS and Phy based OoOs have ROB
@@ -10001,8 +10001,8 @@
 			<stat name="committed_instructions" value="0"/>
 			<stat name="committed_int_instructions" value="0"/>
 			<stat name="committed_fp_instructions" value="0"/>
-			<stat name="total_cycles" value="2619150"/>
-			<stat name="idle_cycles" value="2619150"/>
+			<stat name="total_cycles" value="360150"/>
+			<stat name="idle_cycles" value="360150"/>
 			<stat name="busy_cycles"  value="0"/>
 			<!-- instruction buffer stats -->
 			<!-- ROB stats, both RS and Phy based OoOs have ROB
@@ -10211,8 +10211,8 @@
 			<stat name="committed_instructions" value="0"/>
 			<stat name="committed_int_instructions" value="0"/>
 			<stat name="committed_fp_instructions" value="0"/>
-			<stat name="total_cycles" value="2619150"/>
-			<stat name="idle_cycles" value="2619150"/>
+			<stat name="total_cycles" value="360150"/>
+			<stat name="idle_cycles" value="360150"/>
 			<stat name="busy_cycles"  value="0"/>
 			<!-- instruction buffer stats -->
 			<!-- ROB stats, both RS and Phy based OoOs have ROB
@@ -10421,8 +10421,8 @@
 			<stat name="committed_instructions" value="0"/>
 			<stat name="committed_int_instructions" value="0"/>
 			<stat name="committed_fp_instructions" value="0"/>
-			<stat name="total_cycles" value="2619150"/>
-			<stat name="idle_cycles" value="2619150"/>
+			<stat name="total_cycles" value="360150"/>
+			<stat name="idle_cycles" value="360150"/>
 			<stat name="busy_cycles"  value="0"/>
 			<!-- instruction buffer stats -->
 			<!-- ROB stats, both RS and Phy based OoOs have ROB
@@ -10631,8 +10631,8 @@
 			<stat name="committed_instructions" value="0"/>
 			<stat name="committed_int_instructions" value="0"/>
 			<stat name="committed_fp_instructions" value="0"/>
-			<stat name="total_cycles" value="2619150"/>
-			<stat name="idle_cycles" value="2619150"/>
+			<stat name="total_cycles" value="360150"/>
+			<stat name="idle_cycles" value="360150"/>
 			<stat name="busy_cycles"  value="0"/>
 			<!-- instruction buffer stats -->
 			<!-- ROB stats, both RS and Phy based OoOs have ROB
@@ -10841,8 +10841,8 @@
 			<stat name="committed_instructions" value="0"/>
 			<stat name="committed_int_instructions" value="0"/>
 			<stat name="committed_fp_instructions" value="0"/>
-			<stat name="total_cycles" value="2619150"/>
-			<stat name="idle_cycles" value="2619150"/>
+			<stat name="total_cycles" value="360150"/>
+			<stat name="idle_cycles" value="360150"/>
 			<stat name="busy_cycles"  value="0"/>
 			<!-- instruction buffer stats -->
 			<!-- ROB stats, both RS and Phy based OoOs have ROB
@@ -11051,8 +11051,8 @@
 			<stat name="committed_instructions" value="0"/>
 			<stat name="committed_int_instructions" value="0"/>
 			<stat name="committed_fp_instructions" value="0"/>
-			<stat name="total_cycles" value="2619150"/>
-			<stat name="idle_cycles" value="2619150"/>
+			<stat name="total_cycles" value="360150"/>
+			<stat name="idle_cycles" value="360150"/>
 			<stat name="busy_cycles"  value="0"/>
 			<!-- instruction buffer stats -->
 			<!-- ROB stats, both RS and Phy based OoOs have ROB
@@ -11261,8 +11261,8 @@
 			<stat name="committed_instructions" value="0"/>
 			<stat name="committed_int_instructions" value="0"/>
 			<stat name="committed_fp_instructions" value="0"/>
-			<stat name="total_cycles" value="2619150"/>
-			<stat name="idle_cycles" value="2619150"/>
+			<stat name="total_cycles" value="360150"/>
+			<stat name="idle_cycles" value="360150"/>
 			<stat name="busy_cycles"  value="0"/>
 			<!-- instruction buffer stats -->
 			<!-- ROB stats, both RS and Phy based OoOs have ROB
@@ -11471,8 +11471,8 @@
 			<stat name="committed_instructions" value="0"/>
 			<stat name="committed_int_instructions" value="0"/>
 			<stat name="committed_fp_instructions" value="0"/>
-			<stat name="total_cycles" value="2619150"/>
-			<stat name="idle_cycles" value="2619150"/>
+			<stat name="total_cycles" value="360150"/>
+			<stat name="idle_cycles" value="360150"/>
 			<stat name="busy_cycles"  value="0"/>
 			<!-- instruction buffer stats -->
 			<!-- ROB stats, both RS and Phy based OoOs have ROB
@@ -11681,8 +11681,8 @@
 			<stat name="committed_instructions" value="0"/>
 			<stat name="committed_int_instructions" value="0"/>
 			<stat name="committed_fp_instructions" value="0"/>
-			<stat name="total_cycles" value="2619150"/>
-			<stat name="idle_cycles" value="2619150"/>
+			<stat name="total_cycles" value="360150"/>
+			<stat name="idle_cycles" value="360150"/>
 			<stat name="busy_cycles"  value="0"/>
 			<!-- instruction buffer stats -->
 			<!-- ROB stats, both RS and Phy based OoOs have ROB
@@ -11891,8 +11891,8 @@
 			<stat name="committed_instructions" value="0"/>
 			<stat name="committed_int_instructions" value="0"/>
 			<stat name="committed_fp_instructions" value="0"/>
-			<stat name="total_cycles" value="2619150"/>
-			<stat name="idle_cycles" value="2619150"/>
+			<stat name="total_cycles" value="360150"/>
+			<stat name="idle_cycles" value="360150"/>
 			<stat name="busy_cycles"  value="0"/>
 			<!-- instruction buffer stats -->
 			<!-- ROB stats, both RS and Phy based OoOs have ROB
@@ -12101,8 +12101,8 @@
 			<stat name="committed_instructions" value="0"/>
 			<stat name="committed_int_instructions" value="0"/>
 			<stat name="committed_fp_instructions" value="0"/>
-			<stat name="total_cycles" value="2619150"/>
-			<stat name="idle_cycles" value="2619150"/>
+			<stat name="total_cycles" value="360150"/>
+			<stat name="idle_cycles" value="360150"/>
 			<stat name="busy_cycles"  value="0"/>
 			<!-- instruction buffer stats -->
 			<!-- ROB stats, both RS and Phy based OoOs have ROB
@@ -12311,8 +12311,8 @@
 			<stat name="committed_instructions" value="0"/>
 			<stat name="committed_int_instructions" value="0"/>
 			<stat name="committed_fp_instructions" value="0"/>
-			<stat name="total_cycles" value="2619150"/>
-			<stat name="idle_cycles" value="2619150"/>
+			<stat name="total_cycles" value="360150"/>
+			<stat name="idle_cycles" value="360150"/>
 			<stat name="busy_cycles"  value="0"/>
 			<!-- instruction buffer stats -->
 			<!-- ROB stats, both RS and Phy based OoOs have ROB
@@ -12521,8 +12521,8 @@
 			<stat name="committed_instructions" value="0"/>
 			<stat name="committed_int_instructions" value="0"/>
 			<stat name="committed_fp_instructions" value="0"/>
-			<stat name="total_cycles" value="2619150"/>
-			<stat name="idle_cycles" value="2619150"/>
+			<stat name="total_cycles" value="360150"/>
+			<stat name="idle_cycles" value="360150"/>
 			<stat name="busy_cycles"  value="0"/>
 			<!-- instruction buffer stats -->
 			<!-- ROB stats, both RS and Phy based OoOs have ROB
@@ -12731,8 +12731,8 @@
 			<stat name="committed_instructions" value="0"/>
 			<stat name="committed_int_instructions" value="0"/>
 			<stat name="committed_fp_instructions" value="0"/>
-			<stat name="total_cycles" value="2619150"/>
-			<stat name="idle_cycles" value="2619150"/>
+			<stat name="total_cycles" value="360150"/>
+			<stat name="idle_cycles" value="360150"/>
 			<stat name="busy_cycles"  value="0"/>
 			<!-- instruction buffer stats -->
 			<!-- ROB stats, both RS and Phy based OoOs have ROB
@@ -12941,8 +12941,8 @@
 			<stat name="committed_instructions" value="0"/>
 			<stat name="committed_int_instructions" value="0"/>
 			<stat name="committed_fp_instructions" value="0"/>
-			<stat name="total_cycles" value="2619150"/>
-			<stat name="idle_cycles" value="2619150"/>
+			<stat name="total_cycles" value="360150"/>
+			<stat name="idle_cycles" value="360150"/>
 			<stat name="busy_cycles"  value="0"/>
 			<!-- instruction buffer stats -->
 			<!-- ROB stats, both RS and Phy based OoOs have ROB
@@ -13151,8 +13151,8 @@
 			<stat name="committed_instructions" value="0"/>
 			<stat name="committed_int_instructions" value="0"/>
 			<stat name="committed_fp_instructions" value="0"/>
-			<stat name="total_cycles" value="2619150"/>
-			<stat name="idle_cycles" value="2619150"/>
+			<stat name="total_cycles" value="360150"/>
+			<stat name="idle_cycles" value="360150"/>
 			<stat name="busy_cycles"  value="0"/>
 			<!-- instruction buffer stats -->
 			<!-- ROB stats, both RS and Phy based OoOs have ROB
@@ -13361,8 +13361,8 @@
 			<stat name="committed_instructions" value="0"/>
 			<stat name="committed_int_instructions" value="0"/>
 			<stat name="committed_fp_instructions" value="0"/>
-			<stat name="total_cycles" value="2619150"/>
-			<stat name="idle_cycles" value="2619150"/>
+			<stat name="total_cycles" value="360150"/>
+			<stat name="idle_cycles" value="360150"/>
 			<stat name="busy_cycles"  value="0"/>
 			<!-- instruction buffer stats -->
 			<!-- ROB stats, both RS and Phy based OoOs have ROB
@@ -13482,12 +13482,12 @@
 				<param name="vdd" value="0.000000"/><!-- 0 means using ITRS default vdd -->
 				<param name="ports" value="1,1,1"/>
 				<param name="device_type" value="0"/>
-				<stat name="read_accesses" value="16112"/>
-				<stat name="write_accesses" value="2833"/>
-				<stat name="read_misses" value="9988"/>
-				<stat name="write_misses" value="1933"/>
+				<stat name="read_accesses" value="3573"/>
+				<stat name="write_accesses" value="707"/>
+				<stat name="read_misses" value="3114"/>
+				<stat name="write_misses" value="632"/>
 				<stat name="conflicts" value="0"/>
-				<stat name="duty_cycle" value="0.007233"/>
+				<stat name="duty_cycle" value="0.011884"/>
 		</component>
 		<component id="system.L21" name="L21">
 				<param name="L2_config" value="1048576,64,8,8,1,12, 0, 1"/>
@@ -14380,12 +14380,12 @@
 				<param name="device_type" value="0"/>
 				<param name="buffer_sizes" value="16, 16, 16, 16"/>
 				<!-- cache controller buffer sizes: miss_buffer_size(MSHR),fill_buffer_size,prefetch_buffer_size,wb_buffer_size-->
-				<stat name="read_accesses" value="9988"/>
-				<stat name="write_accesses" value="1933"/>
-				<stat name="read_misses" value="9985"/>
-				<stat name="write_misses" value="1933"/>
+				<stat name="read_accesses" value="3114"/>
+				<stat name="write_accesses" value="632"/>
+				<stat name="read_misses" value="3114"/>
+				<stat name="write_misses" value="632"/>
 				<stat name="conflicts" value="0"/>
-				<stat name="duty_cycle" value="0.004551"/>
+				<stat name="duty_cycle" value="0.010401"/>
 		</component>
 		<component id="system.L31" name="L31">
 				<param name="L3_config" value="33554432,64,16, 16, 16, 40,1"/>
@@ -14536,8 +14536,8 @@
 			<param name="databus_width" value="128"/>
 			<param name="addressbus_width" value="51"/>
 			<!-- McPAT will add the control bus width to the addressbus width automatically -->
-			<stat name="memory_accesses" value="2901"/>
-			<stat name="memory_reads" value="2901"/>
+			<stat name="memory_accesses" value="924"/>
+			<stat name="memory_reads" value="924"/>
 			<stat name="memory_writes" value="0"/>
 			<!-- McPAT does not track individual mc, instead, it takes the total accesses and calculate 
 			the average power per MC or per channel. This is sufficent for most application. 
